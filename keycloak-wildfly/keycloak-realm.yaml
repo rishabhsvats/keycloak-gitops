@@ -1,0 +1,43 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  name: test-realm
+  labels:
+    app: sso
+spec:
+  instanceSelector:
+    matchLabels:
+      app: sso
+  realm:
+    id: "test-realm"
+    identityProviders:
+      - alias: ad
+        displayName: "AD"
+        providerId: oidc
+        enabled: True
+        updateProfileFirstLoginMode: on
+        trustEmail: False
+        storeToken: False
+        addReadTokenRoleOnCreate: False
+        authenticateByDefault: False
+        linkOnly: False
+        config:
+          clientid: test-client
+          tokenUrl: https://login.microsoftonline.com/test-client/oauth2/v2.0/token
+          authorizationUrl: https://login.microsoftonline.com/test-client/oauth2/v2.0/authorize
+          clientAuthMethod: client_secret_post
+          syncMode: IMPORT
+          defaultScope: openid profile email
+          useJwksUrl: "true"
+    realm: "test-realm"
+    enabled: True
+    displayName: "Test Sign In"
+    roles:
+      realm:
+        - name: admin
+          clientRole: False
+          composite: False
+        - name: tester
+          clientRole: False
+          composite: False
+
