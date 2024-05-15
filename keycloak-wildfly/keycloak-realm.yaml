@@ -15,11 +15,11 @@ spec:
         displayName: "AD"
         providerId: oidc
         enabled: True
-        updateProfileFirstLoginMode: on
+        #updateProfileFirstLoginMode: on
         trustEmail: False
         storeToken: False
         addReadTokenRoleOnCreate: False
-        authenticateByDefault: False
+        #authenticateByDefault: False
         linkOnly: False
         config:
           clientid: test-client
