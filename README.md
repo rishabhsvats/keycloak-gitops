@@ -5,7 +5,7 @@ RH-SSO and RHBK manifests to deploy instances of Red Hat Single Sign On and Red 
 
 # Note:
 
-The secret containing certificate and database credential can be created in Non Declarative Manner , or use sealed secrets in case you want to maintain secrets in declarative manner.
+The secret containing certificate and database credential can be created in Non-Declarative Manner , or instead use [sealed secrets](https://github.com/bitnami-labs/sealed-secrets) in case you want to maintain secrets in declarative manner.
 ~~~
 $ oc create secret generic keycloak-db-secret \
 --from-literal=username=xxxxxxx \
