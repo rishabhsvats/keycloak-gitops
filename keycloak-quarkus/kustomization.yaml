@@ -7,6 +7,5 @@ resources:
   - postgres.yaml
   - postgres-svc.yaml
   - keycloak.yaml
-  - certificate.yaml
   - operatorgroup.yaml
   
