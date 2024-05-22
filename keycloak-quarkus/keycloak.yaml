@@ -1,0 +1,25 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  labels:
+    app: sso
+  name: rhbk-keycloak
+  namespace: rhbk-operator
+spec:
+  db:
+    database: keycloak
+    host: postgres-db.postgres.svc.cluster.local
+    passwordSecret:
+      key: password
+      name: keycloak-db-secret
+    port: 5432
+    schema: public
+    usernameSecret:
+      key: username
+      name: keycloak-db-secret
+    vendor: postgres
+  hostname:
+    hostname: example.rhbk.com
+  http:
+    tlsSecret: rhbk-tls-secret
+  instances: 1
