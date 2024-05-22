@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  name: rhbk-tls-secret
+  namespace: rhbk-operator
+spec:
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  secretName: rhbk-tls-secret
+  duration: 2160h0m0s
+  renewBefore: 360h0m0s
+  dnsNames:
+    - "example.rhbk.com"
+
+
