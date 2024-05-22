@@ -3,9 +3,7 @@ kind: Kustomization
 resources:
   - rhbk-operator-ns.yaml
   - postgres-ns.yaml
-  - subscription.yaml
   - postgres.yaml
   - postgres-svc.yaml
   - keycloak.yaml
-  - operatorgroup.yaml
   
